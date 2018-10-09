@@ -4,4 +4,7 @@ class Notes
   
   def viewBody()
   end
+  
+  def viewTitle()
+  end
 end
