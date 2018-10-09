@@ -6,8 +6,7 @@ require_relative 'Notes'
 def main
   @count += @existingNotes.length
   while ( @quit == false ) do
-    selection = notesMenu()
-    optionSort(selection)
+    optionSort(notesMenu())
   end
 end
 
@@ -23,8 +22,7 @@ def notesMenu
 end
 
 def optionSort(selection)
-  choice = selection
-  case choice
+  case selection
   when "1"
     puts "Please enter the title of your new note."
     title = gets.chomp.downcase.capitalize
@@ -43,6 +41,9 @@ def optionSort(selection)
     deleteNote(gets.chomp.to_i)
   when "5"
     @quit = true
+  else
+    puts "Invalid choice"
+    puts ""
   end
 end
   
