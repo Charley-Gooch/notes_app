@@ -6,7 +6,7 @@ describe Main do
   end
   describe '#notesMenu' do
     it 'responds to method to display inital menu' do
-      @main.stub!(:gets).and_return("5")
+      @main.stub(:gets).and_return("5")
       expect(@main).to respond_to(:notesMenu)
     end
   end
