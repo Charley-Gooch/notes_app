@@ -3,7 +3,7 @@ require 'Notes'
 describe Notes do
   @note = nil
   before do
-    @note = Notes.new
+    @note = Notes.new(noteTitle: "this is a title", noteBody: "this is just a test")
   end
   describe '#viewBody' do
     it 'Notes identifies viewBody method' do
@@ -18,7 +18,7 @@ describe Notes do
       expect(@note).to respond_to(:viewTitle)
     end
     it 'Returns the title of a given note' do
-      expect(@note.viewTitle()).to eql("this is just a test")
+      expect(@note.viewTitle()).to eql("this is a title")
     end
   end
 end
