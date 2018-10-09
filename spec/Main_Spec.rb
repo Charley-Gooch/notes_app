@@ -1,9 +1,12 @@
 require 'Main'
 
 describe Main do
+  before do
+    @main = Main.new
+  end
   describe '#notesMenu' do
     it 'responds to method to display inital menu' do
-      allow(subject).to receive(:selection) {"5"}
+      @main.stub!(:gets).and_return("5")
       expect(subject).to respond_to(:notesMenu)
     end
   end
